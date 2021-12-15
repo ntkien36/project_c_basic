@@ -32,7 +32,10 @@ int main(){
             Thuoctinh();
             printf("Nhap vao lua chon cua ban: ");
             scanf("%d",&choice_1);
-            qsort(list,count,sizeof(struct song_t),compare_name);
+            if(choice_1 == 1)qsort(list,count,sizeof(song),compare_name);
+            else if(choice_1 == 2) qsort(list,count,sizeof(song),compare_singer);
+            else if(choice_1 == 3) qsort(list,count,sizeof(song),compare_musician);
+            else if(choice_1 == 4) qsort(list,count,sizeof(song),compare_year);
             Head();
             PrintSong(list,count);
             break;
